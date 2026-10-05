@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Design System | TerraCad Topografia</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@700;800&family=IBM+Plex+Mono:wght@500&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{--ink-950:#06202A;--ink-900:#0A2B38;--ink-800:#0F3A4B;--teal-600:#1A6482;--teal-500:#147193;--green-400:#2FB38E;--amber-400:#F5B82E;--amber-500:#E5A112;--paper-50:#F4F7F8;--paper-100:#E6EDF0;--line:#C9D6DB;--text:#0B2530;--muted:#4C6470;--text-on-dark:#E8F1F4;--muted-on-dark:#9DB6C0;--wa-500:#25D366;--alert-600:#B3492E;--font-display:'Archivo',system-ui,sans-serif;--font-body:'Inter',-apple-system,'Segoe UI',sans-serif;--font-mono:'IBM Plex Mono',ui-monospace,monospace}
+*{box-sizing:border-box}
+body{margin:0;background:var(--ink-950);color:var(--text-on-dark);font-family:var(--font-body);line-height:1.7;font-size:16px}
+.wrap{max-width:1040px;margin:0 auto;padding:0 24px}
+header{padding:64px 0 28px;border-bottom:1px solid rgba(255,255,255,.12)}
+h1,h2,h3{font-family:var(--font-display);font-weight:800;margin:0;letter-spacing:-.02em}
+h1{font-size:clamp(36px,6vw,60px);line-height:1.04}
+h1 em{font-style:normal;color:var(--amber-400)}
+h2{font-size:clamp(26px,4vw,36px);margin:64px 0 8px;line-height:1.1}
+.sub{color:var(--muted-on-dark);margin:0 0 24px}
+.mono{font-family:var(--font-mono);font-weight:500;font-size:12.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--amber-400)}
+.sw{display:grid;grid-template-columns:repeat(auto-fill,minmax(180px,1fr));gap:14px}
+.sw button{font:inherit;text-align:left;cursor:pointer;border:1px solid rgba(255,255,255,.14);border-radius:14px;overflow:hidden;background:var(--ink-800);color:var(--text-on-dark);padding:0}
+.sw button:hover,.sw button:focus-visible{border-color:var(--amber-400);outline:3px solid var(--amber-400);outline-offset:3px}
+.sw i{display:block;height:72px}
+.sw span{display:block;padding:10px 14px 12px;font-size:13px}
+.sw b{display:block;font-size:14px}
+#toast{position:fixed;left:50%;bottom:24px;transform:translateX(-50%);background:var(--amber-400);color:var(--ink-950);padding:10px 20px;border-radius:10px;font-weight:700;opacity:0;transition:opacity .2s;pointer-events:none}
+#toast.on{opacity:1}
+.type>div{display:flex;flex-wrap:wrap;gap:8px 24px;align-items:baseline;padding:14px 0;border-bottom:1px solid rgba(255,255,255,.1)}
+.type small{color:var(--muted-on-dark);font-size:13px;min-width:210px}
+.row{display:flex;flex-wrap:wrap;gap:16px;align-items:center}
+.btn{display:inline-flex;align-items:center;min-height:54px;padding:0 28px;border-radius:10px;font:700 15px var(--font-body);letter-spacing:.02em;text-decoration:none;cursor:pointer;border:1px solid transparent;transition:transform .2s,background .2s}
+.btn:hover{transform:translateY(-2px)}
+.btn:focus-visible{outline:3px solid #fff;outline-offset:3px}
+.btn-primary{background:var(--amber-400);color:var(--ink-950)}
+.btn-primary:hover{background:var(--amber-500)}
+.btn-ghost{background:transparent;color:#fff;border-color:rgba(255,255,255,.4)}
+.btn-ghost:hover{background:rgba(255,255,255,.08)}
+.cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:16px}
+.card{background:var(--ink-800);border:1px solid rgba(255,255,255,.12);border-radius:14px;padding:26px}
+.card h3{font-size:21px;margin:10px 0 8px}
+.card p{margin:0;color:var(--muted-on-dark);font-size:15px}
+.light{background:var(--paper-50);color:var(--text);border-radius:14px;padding:26px;margin-top:16px}
+.light h3{font-size:21px;margin:8px 0}
+.light p{color:var(--muted);margin:0}
+.light .mono{color:var(--teal-600)}
+label{display:block;font-size:14px;margin:0 0 6px;color:var(--muted-on-dark)}
+input{width:100%;max-width:360px;height:52px;border-radius:10px;border:1px solid rgba(255,255,255,.25);background:transparent;color:var(--text-on-dark);padding:0 16px;font:inherit}
+input:focus{border-color:var(--amber-400);outline:3px solid rgba(245,184,46,.35);outline-offset:2px}
+input.err{border-color:var(--alert-600)}
+.help{font-size:13px;color:#F0907A;margin-top:6px}
+pre{background:var(--ink-900);border:1px solid rgba(255,255,255,.12);border-radius:14px;padding:20px;overflow:auto;font-size:13px;line-height:1.6}
+footer{padding:48px 0;color:var(--muted-on-dark);font-size:14px}
+</style>
+</head>
+<body>
+<header><div class="wrap">
+  <span class="mono">Design System · EST. 0+000</span>
+  <h1>TerraCad. <em>Precisão que sustenta a obra.</em></h1>
+  <p class="sub">Extraído da logo azul-petróleo e das fotos de campo. Clique em uma cor para copiar o Hex.</p>
+</div></header>
+<main class="wrap">
+
+<h2>Tom visual</h2>
+<p class="sub">Azul-petróleo profundo, muito branco, âmbar só nas ações, e ornamentos de topografia (curvas de nível, malha, miras).</p>
+
+<h2>Cores</h2>
+<p class="sub">Âmbar é a cor de ação. Verde do WhatsApp só no botão flutuante.</p>
+<div class="sw" id="sw"></div>
+
+<h2>Tipografia</h2>
+<p class="sub">Archivo para títulos, Inter para corpo, IBM Plex Mono para números e rótulos.</p>
+<div class="type">
+  <div><small>H1 · 72px / 42px mobile · 800</small><span style="font-family:var(--font-display);font-weight:800;font-size:clamp(32px,6vw,64px);line-height:1.02;letter-spacing:-.025em">Precisão que <span style="color:var(--amber-400)">sustenta</span></span></div>
+  <div><small>H2 · 44px / 31px · 800</small><span style="font-family:var(--font-display);font-weight:800;font-size:clamp(26px,4vw,40px);line-height:1.08;letter-spacing:-.02em">Topografia do projeto à execução</span></div>
+  <div><small>H3 · 21px · 700</small><span style="font-family:var(--font-display);font-weight:700;font-size:21px">Controle geométrico</span></div>
+  <div><small>Rótulo mono · 12,5px</small><span class="mono">EST. 0+240 · Locação</span></div>
+  <div><small>Corpo · 17px / 16px · 400</small><span style="font-size:17px">Suporte técnico contínuo, da terraplenagem à estrutura.</span></div>
+</div>
+
+<h2>Botões</h2>
+<div class="row">
+  <a class="btn btn-primary" href="#">Solicitar orçamento</a>
+  <a class="btn btn-ghost" href="#">Ver serviços</a>
+</div>
+
+<h2>Cards</h2>
+<div class="cards">
+  <div class="card"><span class="mono">EST. 0+000</span><h3>Levantamento topográfico</h3><p>Mapeamento do terreno com estação total e GNSS.</p></div>
+  <div class="card"><span class="mono">EST. 0+020</span><h3>Locação de obra</h3><p>Marcação em campo do que foi projetado.</p></div>
+  <div class="card"><span class="mono">EST. 0+040</span><h3>Drone</h3><p>Visão aérea da área e do avanço da obra.</p></div>
+</div>
+<div class="light"><span class="mono">Seção clara</span><h3>Texto em #0B2530 sobre #F4F7F8</h3><p>Texto secundário em #4C6470.</p></div>
+
+<h2>Campos</h2>
+<div class="row" style="align-items:flex-start">
+  <div style="flex:1;min-width:240px"><label for="a">Normal</label><input id="a" placeholder="Seu nome"></div>
+  <div style="flex:1;min-width:240px"><label for="b">Com erro</label><input id="b" class="err" value="cidade" aria-describedby="e"><div class="help" id="e">Informe a cidade da obra.</div></div>
+</div>
+
+<h2>Tokens (CSS)</h2>
+<pre>:root{
+  --ink-950:#06202A; --ink-900:#0A2B38; --ink-800:#0F3A4B;
+  --teal-600:#1A6482; --teal-500:#147193; --green-400:#2FB38E;
+  --amber-400:#F5B82E; --amber-500:#E5A112;
+  --paper-50:#F4F7F8; --paper-100:#E6EDF0; --line:#C9D6DB;
+  --text:#0B2530; --muted:#4C6470;
+  --text-on-dark:#E8F1F4; --muted-on-dark:#9DB6C0;
+  --wa-500:#25D366; --alert-600:#B3492E;
+}</pre>
+</main>
+<footer><div class="wrap">Connect Alpha · demonstração para TerraCad Topografia</div></footer>
+<div id="toast" role="status" aria-live="polite"></div>
+<script>
+var cores=[["ink-950","#06202A","Fundo hero e rodapé"],["ink-900","#0A2B38","Seção escura alternada"],["ink-800","#0F3A4B","Cards escuros"],["teal-600","#1A6482","Marca / títulos em claro"],["teal-500","#147193","Fundo da logo"],["green-400","#2FB38E","Verde da logo, só detalhes"],["amber-400","#F5B82E","Ação: botão primário"],["amber-500","#E5A112","Hover do botão"],["paper-50","#F4F7F8","Fundo claro"],["paper-100","#E6EDF0","Seção clara alternada"],["line","#C9D6DB","Bordas claras"],["text","#0B2530","Texto em claro"],["muted","#4C6470","Texto secundário"],["wa-500","#25D366","Só WhatsApp"]];
+var sw=document.getElementById('sw'),t=document.getElementById('toast');
+cores.forEach(function(c){var b=document.createElement('button');b.type='button';b.innerHTML='<i style="background:'+c[1]+'"></i><span><b>--'+c[0]+'</b>'+c[1]+' · '+c[2]+'</span>';b.onclick=function(){try{navigator.clipboard.writeText(c[1])}catch(e){}t.textContent='Copiado '+c[1];t.classList.add('on');setTimeout(function(){t.classList.remove('on')},1400)};sw.appendChild(b)});
+</script>
+</body>
+</html>

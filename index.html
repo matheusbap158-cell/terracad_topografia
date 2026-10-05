@@ -1,0 +1,661 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>TerraCad | Topografia e Geoprocessamento em Lavras/MG</title>
+<meta name="description" content="TerraCad: topografia e geoprocessamento para obras, loteamentos e indústria em Lavras e no Sul de Minas. Levantamento, locação, controle geométrico, drone e georreferenciamento. Nota 5,0 no Google.">
+<meta name="theme-color" content="#06202A">
+<meta name="robots" content="noindex, nofollow"><!-- demo: remover ao publicar o site definitivo -->
+<meta property="og:type" content="website">
+<meta property="og:locale" content="pt_BR">
+<meta property="og:site_name" content="TerraCad Topografia">
+<meta property="og:title" content="TerraCad | Precisão que sustenta a sua obra">
+<meta property="og:description" content="Topografia e geoprocessamento para obras, loteamentos e indústria em Lavras e no Sul de Minas.">
+<meta property="og:image" content="assets/og-image.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="TerraCad | Precisão que sustenta a sua obra">
+<meta name="twitter:description" content="Topografia e geoprocessamento em Lavras e Sul de Minas.">
+<meta name="twitter:image" content="assets/og-image.jpg">
+<link rel="icon" href="assets/favicon.png" type="image/png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@600;700;800&family=IBM+Plex+Mono:wght@500&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<script>document.documentElement.classList.add('js')</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "ProfessionalService",
+  "name": "TerraCad - Topografia & Geoprocessamento",
+  "telephone": "+5535999207670",
+  "description": "Topografia e geoprocessamento para obras, loteamentos e indústria em Lavras e no Sul de Minas.",
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "R. Chagas Dória, 355",
+    "addressLocality": "Lavras",
+    "addressRegion": "MG",
+    "postalCode": "37200-040",
+    "addressCountry": "BR"
+  },
+  "areaServed": "Lavras e região do Sul de Minas",
+  "sameAs": ["https://www.instagram.com/terracad_topografia/"],
+  "aggregateRating": { "@type": "AggregateRating", "ratingValue": "5.0", "reviewCount": "34" }
+}
+</script>
+<style>
+:root{
+  --ink-950:#06202A; --ink-900:#0A2B38; --ink-800:#0F3A4B;
+  --teal-600:#1A6482; --teal-500:#147193; --green-400:#2FB38E;
+  --amber-400:#F5B82E; --amber-500:#E5A112;
+  --paper-50:#F4F7F8; --paper-100:#E6EDF0; --line:#C9D6DB;
+  --text:#0B2530; --muted:#4C6470;
+  --text-on-dark:#E8F1F4; --muted-on-dark:#9DB6C0;
+  --wa-500:#25D366; --alert-600:#B3492E;
+  --font-display:'Archivo',system-ui,sans-serif;
+  --font-body:'Inter',-apple-system,'Segoe UI',sans-serif;
+  --font-mono:'IBM Plex Mono',ui-monospace,monospace;
+  --r-ctl:10px; --r-card:14px;
+  --dline:rgba(255,255,255,.12);
+}
+*,*::before,*::after{box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:80px}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}*{animation:none!important;transition:none!important}}
+body{margin:0;background:var(--ink-950);color:var(--text-on-dark);font-family:var(--font-body);font-size:16px;line-height:1.7;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+@media (min-width:900px){body{font-size:17px}}
+img{max-width:100%;display:block}
+a{color:inherit}
+h1,h2,h3{font-family:var(--font-display);font-weight:800;margin:0;letter-spacing:-.02em;text-wrap:balance}
+p{margin:0}
+::selection{background:var(--amber-400);color:var(--ink-950)}
+:focus-visible{outline:3px solid var(--amber-400);outline-offset:3px;border-radius:4px}
+.light :focus-visible{outline-color:var(--teal-600)}
+.wrap{max-width:1180px;margin:0 auto;padding:0 24px}
+.skip-link{position:absolute;left:16px;top:-64px;background:var(--amber-400);color:var(--ink-950);padding:12px 18px;border-radius:var(--r-ctl);z-index:100;font-weight:700;transition:top .2s}
+.skip-link:focus{top:16px}
+.pend{display:inline-block;border:1px dashed currentColor;border-radius:4px;padding:0 8px;font-size:.86em;opacity:.9}
+.mono{font-family:var(--font-mono);font-weight:500;font-size:12.5px;letter-spacing:.14em;text-transform:uppercase}
+.ico{width:20px;height:20px;flex:none}
+
+/* Cabeçalho */
+.site-header{position:sticky;top:0;z-index:30;background:rgba(6,32,42,.86);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);border-bottom:1px solid transparent;transition:border-color .3s}
+.site-header.scrolled{border-bottom-color:var(--dline)}
+.nav-in{max-width:1180px;margin:0 auto;padding:10px 24px;display:flex;align-items:center;gap:16px}
+.brand{display:flex;align-items:center;gap:12px;text-decoration:none}
+.brand img{width:42px;height:42px;border-radius:9px}
+.brand b{display:block;font-family:var(--font-display);font-weight:800;font-size:21px;letter-spacing:-.01em;line-height:1}
+.brand small{display:block;white-space:nowrap;font-family:var(--font-mono);font-size:9px;letter-spacing:.08em;color:var(--muted-on-dark);margin-top:4px;text-transform:uppercase}
+.nav-links{display:flex;gap:2px;margin-left:auto}
+.nav-links a{text-decoration:none;font-size:14px;font-weight:500;color:var(--muted-on-dark);padding:10px 10px;border-radius:8px;white-space:nowrap;transition:color .2s,background .2s}
+.nav-links a:hover,.nav-links a.on{color:#fff;background:rgba(255,255,255,.07)}
+.menu-btn{display:none;margin-left:auto;background:transparent;border:1px solid var(--dline);color:#fff;border-radius:var(--r-ctl);width:46px;height:46px;font-size:20px;cursor:pointer}
+@media (max-width:1100px){
+  .nav-links{position:absolute;left:0;right:0;top:100%;background:var(--ink-950);flex-direction:column;gap:0;padding:8px 24px 18px;border-bottom:1px solid var(--dline);display:none}
+  .nav-links.open{display:flex}
+  .nav-links a{padding:14px 8px;border-radius:0;border-bottom:1px solid rgba(255,255,255,.08)}
+  .menu-btn{display:inline-grid;place-items:center}
+  .nav-in .header-cta{display:none}
+}
+
+/* Botões */
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;white-space:nowrap;min-height:54px;padding:0 28px;border-radius:var(--r-ctl);font-family:var(--font-body);font-size:15px;font-weight:700;letter-spacing:.02em;text-decoration:none;cursor:pointer;border:1px solid transparent;transition:transform .2s,background .2s,box-shadow .2s;text-align:center}
+.btn:hover{transform:translateY(-2px)}
+.btn-primary{background:var(--amber-400);color:var(--ink-950);box-shadow:0 10px 28px rgba(245,184,46,.22)}
+.btn-primary:hover{background:var(--amber-500);box-shadow:0 14px 34px rgba(245,184,46,.3)}
+.btn-ghost{background:transparent;color:#fff;border-color:rgba(255,255,255,.4)}
+.btn-ghost:hover{background:rgba(255,255,255,.08)}
+.light .btn-ghost{color:var(--teal-600);border-color:var(--teal-600)}
+.light .btn-ghost:hover{background:rgba(26,100,130,.07)}
+.btn.is-small{min-height:46px;padding:0 20px;font-size:14px}
+@media (max-width:640px){.btn{white-space:normal;padding:14px 22px}}
+.case-grid>*,.quote-grid>*,.hero-grid>*{min-width:0}
+.btn-dark{background:var(--ink-950);color:#fff}
+.btn-dark:hover{background:var(--ink-800)}
+
+/* Seções */
+section{padding:104px 0;position:relative}
+@media (max-width:700px){section{padding:64px 0}}
+section.dark{background:var(--ink-950)}
+section.dark2{background:var(--ink-900)}
+section.light{background:var(--paper-50);color:var(--text)}
+section.light2{background:var(--paper-100);color:var(--text)}
+.eyebrow{display:inline-flex;align-items:center;gap:10px;color:var(--amber-400)}
+.eyebrow::before{content:"";width:28px;height:2px;background:currentColor}
+.light .eyebrow,.light2 .eyebrow{color:var(--teal-600)}
+.sec-head{max-width:46rem;margin:0 0 52px}
+.sec-head h2{font-size:clamp(31px,4.8vw,46px);line-height:1.08;margin:14px 0 14px}
+.sec-head h2 em{font-style:normal;color:var(--amber-400)}
+.light .sec-head h2 em,.light2 .sec-head h2 em{color:var(--teal-600)}
+.sec-head .sub{font-size:18px;color:var(--muted-on-dark)}
+.light .sec-head .sub,.light2 .sec-head .sub{color:var(--muted)}
+.cta-row{display:flex;flex-wrap:wrap;gap:14px}
+.cta-center{margin-top:44px}
+
+/* Hero */
+.hero{padding:0;min-height:min(860px,calc(100vh - 66px));display:grid;overflow:hidden;background:var(--ink-950)}
+.hero-bg{position:absolute;inset:0}
+.hero-bg img{width:100%;height:100%;object-fit:cover;object-position:60% 50%;opacity:.5}
+.hero-bg::after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,var(--ink-950) 8%,rgba(6,32,42,.82) 48%,rgba(6,32,42,.35)),linear-gradient(0deg,var(--ink-950),transparent 30%)}
+.contours{position:absolute;inset:0;width:100%;height:100%;opacity:.5;pointer-events:none}
+.hero-grid{position:relative;display:grid;grid-template-columns:1.15fr .85fr;gap:56px;align-items:center;padding-top:72px;padding-bottom:88px}
+@media (max-width:900px){.hero{min-height:0}.hero-grid{grid-template-columns:1fr;gap:40px;padding-top:44px;padding-bottom:64px}}
+.rating{display:inline-flex;align-items:center;gap:12px;padding:8px 16px;border:1px solid rgba(245,184,46,.45);border-radius:var(--r-ctl);background:rgba(245,184,46,.08);color:var(--amber-400)}
+.hero h1{font-size:clamp(42px,7vw,80px);line-height:1.01;letter-spacing:-.03em;margin:26px 0 22px}
+.hero h1 em{font-style:normal;color:var(--amber-400)}
+.hero .lead{font-family:var(--font-display);font-weight:600;font-size:clamp(20px,2.4vw,26px);line-height:1.3;color:#fff;margin-bottom:16px;max-width:30rem;letter-spacing:-.01em}
+.hero .body{color:var(--muted-on-dark);max-width:33rem;margin-bottom:34px}
+.hero .where{margin-top:30px;display:flex;align-items:center;gap:10px;color:var(--muted-on-dark)}
+.hero .where svg{width:18px;height:18px;stroke:var(--amber-400);fill:none;stroke-width:1.8}
+
+/* Moldura com miras */
+.frame{position:relative;margin:0}
+.frame img{width:100%;height:100%;object-fit:cover;border-radius:6px}
+.frame::before,.frame::after{content:"";position:absolute;width:26px;height:26px;border:2px solid var(--amber-400);z-index:2;pointer-events:none}
+.frame::before{top:-8px;left:-8px;border-right:0;border-bottom:0}
+.frame::after{right:-8px;bottom:-8px;border-left:0;border-top:0}
+.frame figcaption,.frame .cap{position:absolute;left:0;right:0;bottom:0;padding:34px 16px 14px;background:linear-gradient(0deg,rgba(6,32,42,.92),transparent);color:#fff;border-radius:0 0 6px 6px;font-family:var(--font-mono);font-size:11.5px;letter-spacing:.12em;text-transform:uppercase;line-height:1.4}
+.hero-photo{aspect-ratio:4/5;width:min(400px,100%);justify-self:end}
+@media (max-width:900px){.hero-photo{aspect-ratio:4/3;width:100%;justify-self:stretch}}
+
+/* Faixa de números */
+.strip{background:var(--ink-900);border-top:1px solid var(--dline);border-bottom:1px solid var(--dline);padding:0}
+.strip-in{display:grid;grid-template-columns:repeat(4,1fr)}
+.stat{padding:30px 22px;border-right:1px solid var(--dline)}
+.stat:last-child{border-right:0}
+.stat b{display:block;font-family:var(--font-display);font-weight:800;font-size:clamp(26px,3.2vw,38px);line-height:1.1;color:#fff;letter-spacing:-.02em}
+.stat span{display:block;margin-top:6px;color:var(--amber-400)}
+@media (max-width:860px){.strip-in{grid-template-columns:1fr 1fr}.stat:nth-child(2){border-right:0}.stat:nth-child(-n+2){border-bottom:1px solid var(--dline)}}
+
+/* Serviços */
+.svc{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+@media (max-width:980px){.svc{grid-template-columns:repeat(2,1fr)}}
+@media (max-width:640px){.svc{grid-template-columns:1fr}}
+.svc-card{background:#fff;border:1px solid var(--line);border-radius:var(--r-card);padding:30px 28px 28px;position:relative;transition:transform .3s,box-shadow .3s,border-color .3s}
+.svc-card:hover{transform:translateY(-4px);box-shadow:0 18px 40px rgba(6,32,42,.12);border-color:var(--teal-600)}
+.svc-card .num{position:absolute;top:26px;right:26px;color:var(--muted)}
+.svc-card .tile{width:54px;height:54px;border-radius:12px;background:var(--ink-950);display:grid;place-items:center;margin-bottom:22px}
+.svc-card .tile svg{width:28px;height:28px;stroke:var(--amber-400);fill:none;stroke-width:1.6;stroke-linecap:round;stroke-linejoin:round}
+.svc-card h3{font-size:21px;line-height:1.2;margin-bottom:10px;color:var(--ink-950);letter-spacing:-.01em;font-weight:700}
+.svc-card p{color:var(--muted);font-size:15.5px;line-height:1.6}
+.svc-card .pend{color:var(--teal-600)}
+
+/* Atuação */
+.fronts{display:grid;grid-template-columns:repeat(3,1fr);gap:0;border:1px solid var(--dline);border-radius:var(--r-card);overflow:hidden}
+@media (max-width:860px){.fronts{grid-template-columns:1fr}}
+.front{padding:42px 34px;border-right:1px solid var(--dline);position:relative;overflow:hidden}
+.front:last-child{border-right:0}
+@media (max-width:860px){.front{border-right:0;border-bottom:1px solid var(--dline)}.front:last-child{border-bottom:0}}
+.front .big{font-family:var(--font-display);font-weight:800;font-size:84px;line-height:1;color:transparent;-webkit-text-stroke:1.5px rgba(245,184,46,.5);margin-bottom:18px;letter-spacing:-.04em}
+.front h3{font-size:28px;margin-bottom:10px}
+.front p{color:var(--muted-on-dark);font-size:16.5px}
+.front::after{content:"";position:absolute;right:-60px;bottom:-60px;width:180px;height:180px;border-radius:50%;border:1px solid rgba(245,184,46,.18);box-shadow:0 0 0 24px rgba(245,184,46,.04),0 0 0 48px rgba(245,184,46,.03)}
+
+/* Obra em destaque */
+.case-grid{display:grid;grid-template-columns:1fr 1.1fr;gap:56px;align-items:center}
+@media (max-width:900px){.case-grid{grid-template-columns:1fr;gap:40px}}
+.case-copy h2{font-size:clamp(34px,5vw,52px);line-height:1.04;margin:14px 0 12px}
+.case-copy h2 em{font-style:normal;color:var(--teal-600)}
+.case-copy .sub{font-family:var(--font-display);font-weight:600;font-size:21px;line-height:1.3;color:var(--teal-600);margin-bottom:18px}
+.case-copy p{color:var(--muted);margin-bottom:26px}
+.case-photos{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+.case-photos .frame:first-child{grid-column:1/-1;aspect-ratio:2.1/1}
+.case-photos .frame:last-child{grid-column:1/-1;aspect-ratio:2.1/1}
+.case-note{margin-top:18px;font-size:13.5px;color:var(--muted)}
+
+/* Em campo */
+.gal{display:grid;grid-template-columns:repeat(4,1fr);gap:18px}
+@media (max-width:980px){.gal{grid-template-columns:repeat(2,1fr)}}
+@media (max-width:560px){.gal{grid-template-columns:1fr 1fr;gap:12px}}
+.gal button{all:unset;display:block;cursor:zoom-in;position:relative}
+.gal .frame{aspect-ratio:4/5;overflow:visible}
+.gal .frame img{transition:transform .5s,filter .4s;filter:saturate(.92)}
+.gal .frame:hover img{filter:saturate(1.05)}
+.gal button:focus-visible .frame{outline:3px solid var(--amber-400);outline-offset:6px}
+.gal .frame .cap{font-size:10.5px;padding:30px 12px 12px}
+dialog.lb{border:0;background:transparent;padding:0;max-width:94vw;max-height:94vh;color:#fff}
+dialog.lb::backdrop{background:rgba(3,14,19,.9)}
+dialog.lb img{max-height:82vh;width:auto;max-width:94vw;border-radius:8px;margin:0 auto}
+dialog.lb p{text-align:center;margin-top:12px;color:var(--muted-on-dark)}
+dialog.lb button{position:absolute;top:-8px;right:-8px;width:44px;height:44px;border-radius:50%;border:0;background:var(--amber-400);color:var(--ink-950);font-size:22px;cursor:pointer;font-weight:700}
+
+/* Como trabalhamos */
+.steps{display:grid;grid-template-columns:repeat(4,1fr);gap:0;position:relative}
+@media (max-width:980px){.steps{grid-template-columns:repeat(2,1fr);gap:20px}}
+@media (max-width:560px){.steps{grid-template-columns:1fr}}
+.step{padding:0 26px 0 0;position:relative}
+.step .n{display:grid;place-items:center;width:56px;height:56px;border-radius:50%;background:var(--ink-950);color:var(--amber-400);font-family:var(--font-mono);font-weight:500;font-size:16px;margin-bottom:22px;position:relative;z-index:1}
+.steps::before{content:"";position:absolute;top:28px;left:28px;right:28px;height:1px;background:repeating-linear-gradient(90deg,var(--teal-600) 0 8px,transparent 8px 16px)}
+@media (max-width:980px){.steps::before{display:none}}
+.step h3{font-size:21px;margin-bottom:8px;color:var(--ink-950);font-weight:700}
+.step p{color:var(--muted);font-size:16px}
+.step .pend{color:var(--teal-600)}
+
+/* Avaliações */
+.reviews{display:grid;grid-template-columns:1fr 1fr;gap:20px}
+@media (max-width:860px){.reviews{grid-template-columns:1fr}}
+.review{margin:0;background:var(--ink-800);border:1px solid var(--dline);border-radius:var(--r-card);padding:38px 34px;display:flex;flex-direction:column;gap:22px;position:relative}
+.review::before{content:"“";position:absolute;top:6px;right:26px;font-family:var(--font-display);font-size:120px;line-height:1;color:rgba(245,184,46,.18)}
+.review .st{color:var(--amber-400);letter-spacing:4px;font-size:18px}
+.review blockquote{margin:0;font-family:var(--font-display);font-weight:600;font-size:clamp(21px,2.6vw,26px);line-height:1.35;letter-spacing:-.01em;flex:1}
+.review figcaption{display:flex;align-items:center;gap:12px;border-top:1px solid var(--dline);padding-top:18px;color:var(--muted-on-dark);font-size:14.5px}
+.review figcaption b{display:block;color:#fff;font-weight:600}
+.review .av{width:42px;height:42px;border-radius:50%;background:var(--teal-500);display:grid;place-items:center;font-weight:700;color:#fff;font-size:13px;flex:none}
+
+/* Dúvidas */
+.faq{max-width:860px;display:grid;gap:12px}
+.faq details{background:#fff;border:1px solid var(--line);border-radius:var(--r-card);transition:border-color .25s,box-shadow .25s}
+.faq details[open]{border-color:var(--teal-600);box-shadow:0 12px 30px rgba(6,32,42,.08)}
+.faq summary{list-style:none;cursor:pointer;display:flex;justify-content:space-between;align-items:center;gap:20px;padding:20px 26px;min-height:64px;font-family:var(--font-display);font-weight:700;font-size:19px;line-height:1.3;color:var(--ink-950);letter-spacing:-.01em}
+.faq summary::-webkit-details-marker{display:none}
+.faq summary::after{content:"";flex:none;width:28px;height:28px;border-radius:8px;border:1px solid var(--teal-600);background:linear-gradient(var(--teal-600),var(--teal-600)) center/12px 2px no-repeat,linear-gradient(var(--teal-600),var(--teal-600)) center/2px 12px no-repeat;transition:transform .3s}
+.faq details[open] summary::after{transform:rotate(45deg)}
+.faq .ans{padding:0 26px 24px;color:var(--muted);font-size:16.5px;max-width:44rem}
+.faq .pend{color:var(--teal-600)}
+
+/* Faixa de chamada */
+.band{background:var(--amber-400);color:var(--ink-950);padding:72px 0;position:relative;overflow:hidden}
+.band-in{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:28px}
+.band h2{font-size:clamp(28px,4.2vw,44px);line-height:1.06;max-width:22ch;letter-spacing:-.025em}
+.band p{margin-top:10px;font-size:18px;max-width:36rem;color:rgba(6,32,42,.8)}
+@media (max-width:700px){.band{padding:52px 0}}
+
+/* Orçamento + contato */
+.quote{background:var(--ink-900)}
+.quote-grid{display:grid;grid-template-columns:1.1fr .9fr;gap:56px;align-items:start}
+@media (max-width:980px){.quote-grid{grid-template-columns:1fr;gap:44px}}
+.form{background:#fff;color:var(--text);border-radius:var(--r-card);padding:36px 34px;box-shadow:0 24px 60px rgba(0,0,0,.35)}
+@media (max-width:560px){.form{padding:26px 20px}}
+.form h3{font-size:26px;color:var(--ink-950);margin-bottom:6px}
+.form .hint{color:var(--muted);font-size:15px;margin-bottom:24px}
+.fgrid{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+@media (max-width:560px){.fgrid{grid-template-columns:1fr}}
+.field{display:flex;flex-direction:column;gap:6px}
+.field.full{grid-column:1/-1}
+.field label{font-size:14px;font-weight:600;color:var(--ink-950)}
+.field input,.field select,.field textarea{font:inherit;font-size:16px;color:var(--text);background:#fff;border:1px solid var(--line);border-radius:var(--r-ctl);padding:0 14px;min-height:52px;width:100%}
+.field textarea{padding:14px;min-height:96px;resize:vertical}
+.field input:focus,.field select:focus,.field textarea:focus{outline:3px solid rgba(26,100,130,.3);outline-offset:1px;border-color:var(--teal-600)}
+.field.bad input,.field.bad select{border-color:var(--alert-600)}
+.field .err{display:none;color:var(--alert-600);font-size:13.5px}
+.field.bad .err{display:block}
+.form .btn{width:100%;margin-top:22px;min-height:58px;font-size:16px}
+.form .legal{font-size:13px;color:var(--muted);margin-top:14px}
+.contact h2{font-size:clamp(30px,4.4vw,44px);line-height:1.06;margin:14px 0 24px}
+.contact h2 em{font-style:normal;color:var(--amber-400)}
+.contact ul{list-style:none;margin:0 0 26px;padding:0;display:grid;gap:18px}
+.contact li{display:grid;grid-template-columns:44px 1fr;gap:14px;align-items:start}
+.contact li .ci{width:44px;height:44px;border-radius:10px;border:1px solid var(--dline);display:grid;place-items:center;background:rgba(255,255,255,.04)}
+.contact li svg{width:20px;height:20px;stroke:var(--amber-400);fill:none;stroke-width:1.7;stroke-linecap:round;stroke-linejoin:round}
+.contact li b{display:block;font-weight:600;color:#fff}
+.contact li span,.contact li a{color:var(--muted-on-dark);text-decoration:none}
+.contact li a:hover{color:var(--amber-400)}
+.map-frame{border-radius:var(--r-card);overflow:hidden;border:1px solid var(--dline);aspect-ratio:16/10;background:var(--ink-800)}
+.map-frame iframe{width:100%;height:100%;border:0;filter:grayscale(.4) contrast(.95)}
+
+/* Rodapé */
+.site-footer{background:var(--ink-950);border-top:1px solid var(--dline);padding:54px 0 28px;font-size:15px;color:var(--muted-on-dark)}
+.ftr-grid{display:grid;grid-template-columns:1.5fr .8fr 1fr;gap:36px;margin-bottom:34px}
+@media (max-width:760px){.ftr-grid{grid-template-columns:1fr;gap:26px}}
+.site-footer h4{margin:0 0 14px;color:var(--amber-400);font-family:var(--font-mono);font-weight:500;font-size:12px;letter-spacing:.14em;text-transform:uppercase}
+.site-footer ul{list-style:none;margin:0;padding:0;display:grid;gap:8px}
+.site-footer a{text-decoration:none}
+.site-footer a:hover{color:var(--amber-400)}
+.ftr-bottom{border-top:1px solid var(--dline);padding-top:20px;display:flex;flex-wrap:wrap;gap:8px 20px;justify-content:space-between;font-size:13px}
+
+/* WhatsApp flutuante */
+.fab{position:fixed;right:20px;bottom:20px;z-index:40;width:60px;height:60px;border-radius:50%;background:var(--wa-500);display:grid;place-items:center;box-shadow:0 10px 30px rgba(37,211,102,.35);text-decoration:none;transition:transform .25s}
+.fab:hover{transform:scale(1.07)}
+.fab svg{width:30px;height:30px;fill:#06280F}
+@media (max-width:640px){.fab{right:16px;bottom:16px}}
+
+.js .reveal{opacity:0;transform:translateY(22px);transition:opacity .8s ease,transform .8s ease}
+.js .reveal.in{opacity:1;transform:none}
+@media (prefers-reduced-motion:reduce){.js .reveal{opacity:1;transform:none}}
+</style>
+</head>
+<body>
+<svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false">
+  <symbol id="wa" viewBox="0 0 24 24"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm0 18.2c-1.5 0-3-.4-4.3-1.2l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2zm4.5-6.1c-.2-.1-1.5-.7-1.7-.8s-.4-.1-.6.1-.7.8-.8 1-.3.2-.5.1a6.7 6.7 0 0 1-3.3-2.9c-.2-.4.2-.4.7-1.3.1-.2 0-.3 0-.4l-.8-1.8c-.2-.5-.4-.4-.6-.4h-.5a1 1 0 0 0-.7.3 3 3 0 0 0-.9 2.2 5.2 5.2 0 0 0 1.1 2.7 11.8 11.8 0 0 0 4.5 4c1.7.7 2.3.8 3.2.6a2.7 2.7 0 0 0 1.8-1.2 2.2 2.2 0 0 0 .1-1.3c0-.1-.2-.2-.5-.3z"/></symbol>
+</svg>
+<a class="skip-link" href="#inicio">Pular para o conteúdo</a>
+
+<header class="site-header" id="topo">
+  <div class="nav-in">
+    <a class="brand" href="#inicio" aria-label="TerraCad, início">
+      <img src="assets/logo.png" alt="" width="150" height="150">
+      <div><b>TerraCad</b><small>Topografia &amp; Geoprocessamento</small></div>
+    </a>
+    <button class="menu-btn" id="menuBtn" type="button" aria-expanded="false" aria-controls="navLinks" aria-label="Abrir menu">☰</button>
+    <nav class="nav-links" id="navLinks" aria-label="Seções da página">
+      <a href="#inicio">Início</a>
+      <a href="#servicos">Serviços</a>
+      <a href="#atuacao">Atuação</a>
+      <a href="#obra">Obra em destaque</a>
+      <a href="#campo">Em campo</a>
+      <a href="#processo">Como trabalhamos</a>
+      <a href="#contato">Contato</a>
+    </nav>
+    <a class="btn btn-primary is-small header-cta" href="#orcamento">Solicitar orçamento</a>
+  </div>
+</header>
+
+<main id="inicio">
+
+<!-- 1. HERO -->
+<section class="hero" aria-labelledby="hero-title">
+  <div class="hero-bg"><img src="assets/shopping-aerea.jpg" alt="" width="1400" height="618" fetchpriority="high"></div>
+  <svg class="contours" id="contours" aria-hidden="true" preserveAspectRatio="xMidYMid slice" viewBox="0 0 1200 800" fill="none" stroke="#F5B82E" stroke-width="1"></svg>
+  <div class="wrap hero-grid">
+    <div class="hero-copy">
+      <span class="rating mono">★ 5,0 no Google · Lavras e Sul de Minas</span>
+      <h1 id="hero-title">Precisão que <em>sustenta</em> a sua obra.</h1>
+      <p class="lead">Topografia e geoprocessamento para obras, loteamentos e indústria.</p>
+      <p class="body">Levantamento, locação, controle geométrico e acompanhamento técnico em campo, com drone e georreferenciamento. Precisão e agilidade do primeiro piquete à entrega.</p>
+      <div class="cta-row">
+        <a class="btn btn-primary" href="#orcamento">Solicitar orçamento</a>
+        <a class="btn btn-ghost" href="#servicos">Ver serviços</a>
+      </div>
+      <div class="where">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 21s7-6.100 7-11.500A7 7 0 0 0 5 9.500C5 14.900 12 21 12 21z"/><circle cx="12" cy="9.500" r="2.500"/></svg>
+        <span class="mono">Atendimento em Lavras e região</span>
+      </div>
+    </div>
+    <figure class="frame hero-photo">
+      <img src="assets/estacao-total-terraplenagem.jpg" alt="Estação total em campo de terraplenagem, com equipamento ao fundo" width="688" height="837">
+      <figcaption>EST. 0+000 · Terraplenagem</figcaption>
+    </figure>
+  </div>
+</section>
+
+<!-- 2. FAIXA DE NÚMEROS -->
+<div class="strip" aria-label="Destaques">
+  <div class="wrap strip-in">
+    <div class="stat"><b>5,0</b><span class="mono">nota no Google</span></div>
+    <div class="stat"><b>34</b><span class="mono">avaliações</span></div>
+    <div class="stat"><b>Sul de Minas</b><span class="mono">região atendida</span></div>
+    <div class="stat"><b>Obras · Loteamentos · Indústria</b><span class="mono">frentes de atuação</span></div>
+  </div>
+</div>
+
+<!-- 3. SERVIÇOS -->
+<section class="light reveal" id="servicos" aria-labelledby="svc-title">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="eyebrow mono">Serviços</span>
+      <h2 id="svc-title">Topografia do projeto <em>à execução.</em></h2>
+      <p class="sub">Do levantamento inicial ao acompanhamento da obra.</p>
+    </div>
+    <div class="svc">
+      <article class="svc-card"><span class="num mono">EST. 0+000</span>
+        <div class="tile"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="8.500" y="3" width="7" height="5" rx="1"/><path d="M12 8v3M6 21l6-10 6 10M9 17h6"/></svg></div>
+        <h3>Levantamento topográfico</h3><p>Mapeamento do terreno com estação total e GNSS, base segura para projetos e obras.</p></article>
+      <article class="svc-card"><span class="num mono">EST. 0+020</span>
+        <div class="tile"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="5"/><path d="M12 2v5M12 17v5M2 12h5M17 12h5"/></svg></div>
+        <h3>Locação de obra</h3><p>Marcação em campo do que foi projetado, com precisão e no prazo da obra.</p></article>
+      <article class="svc-card"><span class="num mono">EST. 0+040</span>
+        <div class="tile"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 4v16h16L4 4z"/><path d="M4 14h4M4 9h2M13 20v-3"/></svg></div>
+        <h3>Controle geométrico</h3><p>Conferência da geometria durante a execução, para manter a obra dentro do projeto.</p></article>
+      <article class="svc-card"><span class="num mono">EST. 0+060</span>
+        <div class="tile"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 20h18M3 20V4"/><path d="M6 16l4-5 3 3 6-8"/></svg></div>
+        <h3>Acompanhamento de obra</h3><p>Suporte técnico contínuo, da terraplenagem às fases de implantação da estrutura.</p></article>
+      <article class="svc-card"><span class="num mono">EST. 0+080</span>
+        <div class="tile"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="9.500" y="9.500" width="5" height="5" rx="1"/><circle cx="5" cy="5" r="2.200"/><circle cx="19" cy="5" r="2.200"/><circle cx="5" cy="19" r="2.200"/><circle cx="19" cy="19" r="2.200"/><path d="M7 7l3 3M17 7l-3 3M7 17l3-3M17 17l-3-3"/></svg></div>
+        <h3>Drone</h3><p>Registro e visão aérea da área e do avanço da obra. <span class="pend">[APLICAÇÕES DE DRONE A CONFIRMAR]</span></p></article>
+      <article class="svc-card"><span class="num mono">EST. 0+100</span>
+        <div class="tile"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/><ellipse cx="12" cy="12" rx="4" ry="9"/><path d="M3 12h18"/></svg></div>
+        <h3>Georreferenciamento</h3><p>Posicionamento de áreas e projetos em coordenadas georreferenciadas. <span class="pend">[TIPOS DE GEORREFERENCIAMENTO A CONFIRMAR]</span></p></article>
+    </div>
+    <div class="cta-center"><a class="btn btn-primary" href="#orcamento">Pedir orçamento para o meu projeto</a></div>
+  </div>
+</section>
+
+<!-- 4. ATUAÇÃO -->
+<section class="dark2 reveal" id="atuacao" aria-labelledby="atu-title">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="eyebrow mono">Atuação</span>
+      <h2 id="atu-title">Onde a precisão <em>faz diferença.</em></h2>
+    </div>
+    <div class="fronts">
+      <div class="front"><div class="big" aria-hidden="true">01</div><h3>Obras</h3><p>Obras comerciais, com apoio topográfico desde a terraplenagem.</p></div>
+      <div class="front"><div class="big" aria-hidden="true">02</div><h3>Loteamentos</h3><p>Levantamento e locação para o desenvolvimento de loteamentos.</p></div>
+      <div class="front"><div class="big" aria-hidden="true">03</div><h3>Indústria</h3><p>Serviços em áreas industriais, com equipe preparada para trabalhar em campo.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- 5. OBRA EM DESTAQUE -->
+<section class="light2 reveal" id="obra" aria-labelledby="obra-title">
+  <div class="wrap case-grid">
+    <div class="case-copy">
+      <span class="eyebrow mono">Obra em destaque</span>
+      <h2 id="obra-title">Shopping <em>Cidade da Serra.</em></h2>
+      <p class="sub">Acompanhamento topográfico da terraplenagem à estrutura.</p>
+      <p>Atuamos na obra desde a etapa inicial de terraplenagem até a implantação da estrutura, com locação, controle geométrico e suporte técnico contínuo, em cada etapa da obra.</p>
+      <a class="btn btn-primary" href="#orcamento">Quero esse acompanhamento na minha obra</a>
+      <p class="case-note">Vista aérea e fachada do Shopping Cidade da Serra. <span class="pend">[AUTORIZAÇÃO DO CLIENTE PARA CITAR A OBRA A CONFIRMAR]</span></p>
+    </div>
+    <div class="case-photos">
+      <figure class="frame"><img src="assets/shopping-aerea.jpg" alt="Vista aérea do Shopping Cidade da Serra e do entorno" width="1400" height="618" loading="lazy"><figcaption>Vista aérea · Shopping Cidade da Serra</figcaption></figure>
+      <figure class="frame"><img src="assets/shopping-fachada.jpg" alt="Fachada do Shopping Cidade da Serra durante a obra" width="1400" height="628" loading="lazy"><figcaption>Fachada · Fase de implantação</figcaption></figure>
+    </div>
+  </div>
+</section>
+
+<!-- 6. EM CAMPO -->
+<section class="dark reveal" id="campo" aria-labelledby="campo-title">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="eyebrow mono">Em campo</span>
+      <h2 id="campo-title">Equipamento de precisão, <em>equipe no canteiro.</em></h2>
+      <p class="sub">Estação total, GNSS e coletor de dados, em obras e áreas industriais.</p>
+    </div>
+    <div class="gal">
+      <button type="button" data-cap="Estação total em terraplenagem"><figure class="frame"><img src="assets/estacao-total-terraplenagem.jpg" alt="Estação total em campo de terraplenagem" width="688" height="837" loading="lazy"><figcaption class="cap">Estação total · Terraplenagem</figcaption></figure></button>
+      <button type="button" data-cap="Estação total em obra"><figure class="frame"><img src="assets/estacao-total-obra.jpg" alt="Estação total em obra, com escavadeira e operário ao fundo" width="685" height="840" loading="lazy"><figcaption class="cap">Estação total · Obra</figcaption></figure></button>
+      <button type="button" data-cap="Estação total em área de mineração"><figure class="frame"><img src="assets/estacao-total-mineracao.jpg" alt="Estação total em área de mineração, com correia transportadora e caminhão" width="684" height="839" loading="lazy"><figcaption class="cap">Estação total · Mineração</figcaption></figure></button>
+      <button type="button" data-cap="Estações totais em galpão"><figure class="frame"><img src="assets/galpao-estacoes-totais.jpg" alt="Duas estações totais em galpão industrial" width="684" height="842" loading="lazy"><figcaption class="cap">Estações totais · Galpão</figcaption></figure></button>
+      <button type="button" data-cap="Locação em galpão industrial"><figure class="frame"><img src="assets/locacao-galpao-equipe.jpg" alt="Equipe fazendo a locação em galpão industrial, com estação total em primeiro plano" width="686" height="838" loading="lazy"><figcaption class="cap">Locação · Galpão industrial</figcaption></figure></button>
+      <button type="button" data-cap="GNSS em área industrial"><figure class="frame"><img src="assets/gnss-area-industrial.jpg" alt="Receptor GNSS em área industrial, com silos ao fundo" width="689" height="830" loading="lazy"><figcaption class="cap">GNSS · Área industrial</figcaption></figure></button>
+      <button type="button" data-cap="Topógrafo com GNSS"><figure class="frame"><img src="assets/topografo-gnss.jpg" alt="Topógrafo com bastão GNSS em área industrial" width="693" height="849" loading="lazy"><figcaption class="cap">Topógrafo · GNSS</figcaption></figure></button>
+      <button type="button" data-cap="Coletor de dados em campo"><figure class="frame"><img src="assets/coletor-trimble.jpg" alt="Coletor de dados em campo, em área industrial" width="688" height="840" loading="lazy"><figcaption class="cap">Coletor de dados · Campo</figcaption></figure></button>
+    </div>
+  </div>
+</section>
+
+<!-- 7. COMO TRABALHAMOS -->
+<section class="light reveal" id="processo" aria-labelledby="proc-title">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="eyebrow mono">Como trabalhamos</span>
+      <h2 id="proc-title">Do primeiro contato <em>à entrega.</em></h2>
+    </div>
+    <div class="steps">
+      <div class="step"><span class="n">01</span><h3>Você descreve a obra</h3><p>Conte o tipo de serviço, o local e o prazo pelo formulário ou pelo WhatsApp.</p></div>
+      <div class="step"><span class="n">02</span><h3>Alinhamos o escopo</h3><p>Entendemos o que a obra precisa e combinamos escopo e prazo.</p></div>
+      <div class="step"><span class="n">03</span><h3>Execução em campo</h3><p>A equipe vai ao local com os equipamentos e executa o serviço.</p></div>
+      <div class="step"><span class="n">04</span><h3>Entrega dos dados</h3><p>Você recebe o resultado do serviço. <span class="pend">[FORMATO E DOCUMENTOS DE ENTREGA A CONFIRMAR]</span></p></div>
+    </div>
+    <div class="cta-center"><a class="btn btn-primary" href="#orcamento">Solicitar orçamento</a></div>
+  </div>
+</section>
+
+<!-- 8. AVALIAÇÕES -->
+<section class="dark2 reveal" id="avaliacoes" aria-labelledby="av-title">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="eyebrow mono">Avaliações</span>
+      <h2 id="av-title">Quem contratou, <em>aprova.</em></h2>
+      <p class="sub">Nota 5,0 no Google, com 34 avaliações.</p>
+    </div>
+    <div class="reviews">
+      <figure class="review">
+        <span class="st" aria-label="5 estrelas">★★★★★</span>
+        <blockquote>“Gostei demais tô serviço, pessoal super atencioso, trabalho muito bom.”</blockquote>
+        <figcaption><span class="av">G</span><span><b>Cliente</b>Avaliação no Google</span></figcaption>
+      </figure>
+      <figure class="review">
+        <span class="st" aria-label="5 estrelas">★★★★★</span>
+        <blockquote>“Excelente profissional, com alto nível técnico e domínio do que faz.”</blockquote>
+        <figcaption><span class="av">G</span><span><b>Cliente</b>Avaliação no Google</span></figcaption>
+      </figure>
+    </div>
+    <div class="cta-center"><a class="btn btn-ghost" href="https://www.google.com/maps/place/TerraCad+-+Topografia+%26+Geoprocessamento/@-21.2480154,-45.0089766,17z" target="_blank" rel="noopener">Ver o TerraCad no Google</a></div>
+  </div>
+</section>
+
+<!-- 9. DÚVIDAS -->
+<section class="light reveal" id="duvidas" aria-labelledby="faq-title">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="eyebrow mono">Dúvidas frequentes</span>
+      <h2 id="faq-title">Antes de <em>pedir o orçamento.</em></h2>
+    </div>
+    <div class="faq">
+      <details><summary>Quais regiões vocês atendem?</summary><div class="ans">Lavras e toda a região do Sul de Minas.</div></details>
+      <details><summary>Que tipo de obra vocês atendem?</summary><div class="ans">Obras comerciais, industriais e loteamentos.</div></details>
+      <details><summary>Como peço um orçamento?</summary><div class="ans">Pelo formulário desta página ou direto no WhatsApp. Informe o serviço, o local e o prazo.</div></details>
+      <details><summary>Quanto custa e qual o prazo?</summary><div class="ans">Depende do serviço, da área e das condições do local. <span class="pend">[VALORES E PRAZOS A CONFIRMAR]</span></div></details>
+      <details><summary>O que eu recebo no final do serviço?</summary><div class="ans"><span class="pend">[ENTREGAS A CONFIRMAR]</span></div></details>
+    </div>
+  </div>
+</section>
+
+<!-- 10. CHAMADA FINAL -->
+<section class="band reveal" aria-labelledby="band-title" style="padding:72px 0">
+  <div class="wrap band-in">
+    <div>
+      <h2 id="band-title">Sua obra no prumo, do primeiro piquete à entrega.</h2>
+      <p>Peça o orçamento e fale direto com a equipe da TerraCad.</p>
+    </div>
+    <a class="btn btn-dark" href="#orcamento">Solicitar orçamento</a>
+  </div>
+</section>
+
+<!-- 11. ORÇAMENTO + CONTATO -->
+<section class="quote reveal" id="orcamento" aria-labelledby="orc-title">
+  <div class="wrap quote-grid">
+    <form class="form" id="quoteForm" novalidate aria-labelledby="orc-title">
+      <span class="eyebrow mono" style="color:var(--teal-600)">Orçamento</span>
+      <h3 id="orc-title" style="margin-top:10px">Conte sobre a sua obra.</h3>
+      <p class="hint">Preencha e continue a conversa pelo WhatsApp, já com as informações do seu projeto.</p>
+      <div class="fgrid">
+        <div class="field full"><label for="f-nome">Nome</label><input id="f-nome" name="nome" type="text" autocomplete="name" required aria-describedby="e-nome"><span class="err" id="e-nome">Informe o seu nome.</span></div>
+        <div class="field"><label for="f-serv">Serviço</label>
+          <select id="f-serv" name="servico" required aria-describedby="e-serv">
+            <option value="">Selecione</option>
+            <option>Levantamento topográfico</option><option>Locação de obra</option><option>Controle geométrico</option><option>Acompanhamento de obra</option><option>Drone</option><option>Georreferenciamento</option><option>Outro</option>
+          </select><span class="err" id="e-serv">Escolha o serviço.</span></div>
+        <div class="field"><label for="f-tipo">Tipo de projeto</label>
+          <select id="f-tipo" name="tipo"><option value="">Selecione</option><option>Obra</option><option>Loteamento</option><option>Indústria</option><option>Outro</option></select></div>
+        <div class="field full"><label for="f-cidade">Cidade da obra</label><input id="f-cidade" name="cidade" type="text" required aria-describedby="e-cidade"><span class="err" id="e-cidade">Informe a cidade da obra.</span></div>
+        <div class="field full"><label for="f-det">Detalhes (opcional)</label><textarea id="f-det" name="detalhes"></textarea></div>
+      </div>
+      <button class="btn btn-primary" type="submit">Enviar pelo WhatsApp <svg class="ico" aria-hidden="true" fill="#06202A"><use href="#wa"/></svg></button>
+      <p class="legal">Ao enviar, abrimos o WhatsApp com a sua mensagem pronta. Nenhum dado fica guardado neste site.</p>
+    </form>
+
+    <div class="contact" id="contato">
+      <span class="eyebrow mono">Contato</span>
+      <h2>Fale com a <em>TerraCad.</em></h2>
+      <ul>
+        <li><span class="ci"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 21s7-6.100 7-11.500A7 7 0 0 0 5 9.500C5 14.900 12 21 12 21z"/><circle cx="12" cy="9.500" r="2.500"/></svg></span><div><b>Endereço</b><span>R. Chagas Dória, 355 · Centro<br>Lavras/MG · CEP 37200-040</span></div></li>
+        <li><span class="ci"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 4h4l2 5-2.500 1.500a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2z"/></svg></span><div><b>Telefone e WhatsApp</b><a href="tel:+5535999207670">(35) 99920-7670</a></div></li>
+        <li><span class="ci"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg></span><div><b>Horário</b><span class="pend">[HORÁRIO A CONFIRMAR]</span></div></li>
+        <li><span class="ci"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3.500" y="3.500" width="17" height="17" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17" cy="7" r=".6"/></svg></span><div><b>Instagram</b><a href="https://www.instagram.com/terracad_topografia/" target="_blank" rel="noopener">@terracad_topografia</a></div></li>
+      </ul>
+      <a class="btn btn-ghost" style="margin-bottom:28px" href="https://wa.me/5535999207670?text=Ol%C3%A1!%20Vim%20pelo%20site%20da%20TerraCad%20e%20quero%20solicitar%20um%20or%C3%A7amento." target="_blank" rel="noopener">Chamar no WhatsApp <svg class="ico" aria-hidden="true" fill="currentColor"><use href="#wa"/></svg></a>
+      <div class="map-frame"><iframe src="https://www.google.com/maps?q=-21.2480204,-45.0064017&amp;z=17&amp;output=embed" title="Localização da TerraCad no mapa" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe></div>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <div class="ftr-grid">
+      <div>
+        <div class="brand" style="margin-bottom:14px"><img src="assets/logo.png" alt="" width="150" height="150"><div><b style="color:#fff">TerraCad</b><small>Topografia &amp; Geoprocessamento</small></div></div>
+        <p>Topografia e geoprocessamento em Lavras e região.</p>
+      </div>
+      <div>
+        <h4>Navegar</h4>
+        <ul><li><a href="#servicos">Serviços</a></li><li><a href="#obra">Obra em destaque</a></li><li><a href="#campo">Em campo</a></li><li><a href="#duvidas">Dúvidas</a></li></ul>
+      </div>
+      <div>
+        <h4>Contato</h4>
+        <ul>
+          <li><a href="https://wa.me/5535999207670" target="_blank" rel="noopener">WhatsApp (35) 99920-7670</a></li>
+          <li><a href="https://www.instagram.com/terracad_topografia/" target="_blank" rel="noopener">@terracad_topografia</a></li>
+          <li>R. Chagas Dória, 355 · Centro<br>Lavras/MG</li>
+        </ul>
+      </div>
+    </div>
+    <div class="ftr-bottom"><span>© <span id="ano">2026</span> TerraCad Topografia &amp; Geoprocessamento</span><span>Site produzido por Connect Alpha</span></div>
+  </div>
+</footer>
+
+<a class="fab" href="https://wa.me/5535999207670?text=Ol%C3%A1!%20Vim%20pelo%20site%20da%20TerraCad%20e%20quero%20solicitar%20um%20or%C3%A7amento." target="_blank" rel="noopener" aria-label="Falar no WhatsApp"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="#wa"/></svg></a>
+
+<dialog class="lb" id="lb" aria-label="Foto ampliada"><button type="button" id="lbClose" aria-label="Fechar">×</button><img id="lbImg" alt=""><p id="lbCap"></p></dialog>
+
+<script>
+(function(){
+  var WA='5535999207670';
+  document.getElementById('ano').textContent=new Date().getFullYear();
+
+  // curvas de nível decorativas do hero
+  var svg=document.getElementById('contours'),d='';
+  for(var i=0;i<14;i++){
+    var y=90+i*52,a=26+i*3.500,p='M-20 '+y;
+    for(var x=0;x<=1240;x+=40){p+=' L'+x+' '+(y+Math.sin(x/120+i*.7)*a+Math.cos(x/57+i)*9).toFixed(1)}
+    d+='<path d="'+p+'" stroke-opacity="'+(0.07+((i%3)===0?0.08:0)).toFixed(2)+'"/>';
+  }
+  svg.innerHTML=d;
+
+  // cabeçalho e menu
+  var header=document.getElementById('topo');
+  function sc(){header.classList.toggle('scrolled',window.scrollY>10)}
+  sc();window.addEventListener('scroll',sc,{passive:true});
+  var btn=document.getElementById('menuBtn'),nav=document.getElementById('navLinks');
+  function close(){nav.classList.remove('open');btn.setAttribute('aria-expanded','false')}
+  btn.addEventListener('click',function(){var o=nav.classList.toggle('open');btn.setAttribute('aria-expanded',String(o))});
+  nav.querySelectorAll('a').forEach(function(a){a.addEventListener('click',close)});
+  document.addEventListener('keydown',function(e){if(e.key==='Escape')close()});
+  var links=[].slice.call(nav.querySelectorAll('a'));
+  if('IntersectionObserver' in window){
+    var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting)links.forEach(function(l){l.classList.toggle('on',l.getAttribute('href')==='#'+e.target.id)})})},{rootMargin:'-40% 0px -55% 0px'});
+    ['inicio','servicos','atuacao','obra','campo','processo','contato'].forEach(function(id){var el=document.getElementById(id);if(el)io.observe(el)});
+    var rv=new IntersectionObserver(function(es,o){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');o.unobserve(e.target)}})},{threshold:.08});
+    document.querySelectorAll('.reveal').forEach(function(el){rv.observe(el)});
+  }else{document.querySelectorAll('.reveal').forEach(function(el){el.classList.add('in')})}
+
+  // galeria ampliada
+  var lb=document.getElementById('lb'),lbImg=document.getElementById('lbImg'),lbCap=document.getElementById('lbCap');
+  document.querySelectorAll('.gal button').forEach(function(b){
+    b.addEventListener('click',function(){
+      var im=b.querySelector('img');lbImg.src=im.src;lbImg.alt=im.alt;lbCap.textContent=b.dataset.cap||'';
+      if(lb.showModal)lb.showModal();
+    });
+  });
+  document.getElementById('lbClose').addEventListener('click',function(){lb.close()});
+  lb.addEventListener('click',function(e){if(e.target===lb)lb.close()});
+
+  // formulário -> WhatsApp
+  var form=document.getElementById('quoteForm');
+  function check(id){var f=document.getElementById(id),box=f.closest('.field'),ok=f.value.trim()!=='';box.classList.toggle('bad',!ok);f.setAttribute('aria-invalid',String(!ok));return ok}
+  ['f-nome','f-serv','f-cidade'].forEach(function(id){document.getElementById(id).addEventListener('input',function(){check(id)})});
+  form.addEventListener('submit',function(e){
+    e.preventDefault();
+    var ok=['f-nome','f-serv','f-cidade'].map(check).every(Boolean);
+    if(!ok){var first=form.querySelector('.field.bad input,.field.bad select');if(first)first.focus();return}
+    var v=function(id){return document.getElementById(id).value.trim()};
+    var msg='Olá! Vim pelo site da TerraCad e quero solicitar um orçamento.\n\nNome: '+v('f-nome')+'\nServiço: '+v('f-serv')+(v('f-tipo')?'\nTipo de projeto: '+v('f-tipo'):'')+'\nCidade da obra: '+v('f-cidade')+(v('f-det')?'\nDetalhes: '+v('f-det'):'');
+    window.open('https://wa.me/'+WA+'?text='+encodeURIComponent(msg),'_blank','noopener');
+  });
+})();
+</script>
+</body>
+</html>

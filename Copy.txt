@@ -1,0 +1,158 @@
+COPY - TERRACAD TOPOGRAFIA & GEOPROCESSAMENTO (Lavras/MG)
+Landing page de demonstração. Público: construtoras, engenheiros, loteadores e indústrias. Tom: técnico, direto, confiável. Sem promessa que não possa ser comprovada.
+Dados reais usados: bio do Instagram, Google Maps (5,0 e 34 avaliações, endereço, telefone, texto do proprietário), duas avaliações reais, fotos enviadas pelo cliente.
+
+=====================================================
+MENU
+Início | Serviços | Atuação | Obra em destaque | Em campo | Como trabalhamos | Contato
+Botão do topo: Solicitar orçamento
+
+=====================================================
+1. HERO
+Selo: 5,0 no Google · Lavras e Sul de Minas
+Título: Precisão que sustenta a sua obra.
+Subtítulo: Topografia e geoprocessamento para obras, loteamentos e indústria.
+Texto: Levantamento, locação, controle geométrico e acompanhamento técnico em campo, com drone e georreferenciamento. Precisão e agilidade do primeiro piquete à entrega.
+Botão principal: Solicitar orçamento
+Botão secundário: Ver serviços
+Linha de apoio: Atendimento em Lavras e região
+
+=====================================================
+2. FAIXA DE NÚMEROS (só dados reais)
+- 5,0 | nota no Google
+- 34 | avaliações de clientes
+- Sul de Minas | região atendida
+- Obras · Loteamentos · Indústria | frentes de atuação
+
+=====================================================
+3. SERVIÇOS
+Seção: Serviços
+Título: Topografia do projeto à execução.
+Subtítulo: Do levantamento inicial ao acompanhamento da obra.
+
+Card 1 - Levantamento topográfico
+Texto: Mapeamento do terreno com estação total e GNSS, base segura para projetos e obras.
+
+Card 2 - Locação de obra
+Texto: Marcação em campo do que foi projetado, com precisão e no prazo da obra.
+
+Card 3 - Controle geométrico
+Texto: Conferência da geometria durante a execução, para manter a obra dentro do projeto.
+
+Card 4 - Acompanhamento de obra
+Texto: Suporte técnico contínuo, da terraplenagem às fases de implantação da estrutura.
+
+Card 5 - Drone
+Texto: Registro e visão aérea da área e do avanço da obra. [APLICAÇÕES DE DRONE A CONFIRMAR]
+
+Card 6 - Georreferenciamento
+Texto: Posicionamento de áreas e projetos em coordenadas georreferenciadas. [TIPOS DE GEORREFERENCIAMENTO A CONFIRMAR]
+
+Botão: Pedir orçamento para o meu projeto
+
+=====================================================
+4. ATUAÇÃO (para quem trabalhamos)
+Seção: Atuação
+Título: Onde a precisão faz diferença.
+Item 1 - Obras: Obras comerciais, com apoio topográfico desde a terraplenagem.
+Item 2 - Loteamentos: Levantamento e locação para o desenvolvimento de loteamentos.
+Item 3 - Indústria: Serviços em áreas industriais, com equipe preparada para trabalhar em campo.
+
+=====================================================
+5. OBRA EM DESTAQUE
+Seção: Obra em destaque
+Título: Shopping Cidade da Serra.
+Subtítulo: Acompanhamento topográfico da terraplenagem à estrutura.
+Texto: Atuamos na obra desde a etapa inicial de terraplenagem até a implantação da estrutura, com locação, controle geométrico e suporte técnico contínuo, em cada etapa da obra.
+Legenda das fotos: Vista aérea e fachada do Shopping Cidade da Serra. [AUTORIZAÇÃO DO CLIENTE PARA CITAR A OBRA A CONFIRMAR]
+Botão: Quero esse acompanhamento na minha obra
+
+=====================================================
+6. EM CAMPO
+Seção: Em campo
+Título: Equipamento de precisão, equipe no canteiro.
+Subtítulo: Estação total, GNSS e coletor de dados, em obras e áreas industriais.
+Legendas das fotos:
+- Estação total em terraplenagem
+- Estação total em obra
+- Estação total em área de mineração
+- Estações totais em galpão
+- Locação em galpão industrial
+- GNSS em área industrial
+- Topógrafo com GNSS
+- Coletor de dados em campo
+
+=====================================================
+7. COMO TRABALHAMOS
+Seção: Como trabalhamos
+Título: Do primeiro contato à entrega.
+Passo 01 - Você descreve a obra: Conte o tipo de serviço, o local e o prazo pelo formulário ou pelo WhatsApp.
+Passo 02 - Alinhamos o escopo: Entendemos o que a obra precisa e combinamos escopo e prazo.
+Passo 03 - Execução em campo: A equipe vai ao local com os equipamentos e executa o serviço.
+Passo 04 - Entrega dos dados: Você recebe o resultado do serviço. [FORMATO E DOCUMENTOS DE ENTREGA A CONFIRMAR]
+Botão: Solicitar orçamento
+
+=====================================================
+8. AVALIAÇÕES
+Seção: Avaliações
+Título: Quem contratou, aprova.
+Subtítulo: Nota 5,0 no Google, com 34 avaliações.
+Avaliação 1 (Cliente, avaliação no Google): "Gostei demais tô serviço, pessoal super atencioso, trabalho muito bom."
+Avaliação 2 (Cliente, avaliação no Google): "Excelente profissional, com alto nível técnico e domínio do que faz."
+Botão: Ver o TerraCad no Google
+
+=====================================================
+9. ORÇAMENTO (formulário que abre o WhatsApp)
+Seção: Orçamento
+Título: Conte sobre a sua obra.
+Subtítulo: Preencha e continue a conversa pelo WhatsApp, já com as informações do seu projeto.
+Campos: Nome | Serviço (levantamento topográfico, locação de obra, controle geométrico, acompanhamento de obra, drone, georreferenciamento, outro) | Tipo de projeto (obra, loteamento, indústria, outro) | Cidade da obra | Detalhes (opcional)
+Botão: Enviar pelo WhatsApp
+Aviso: Ao enviar, abrimos o WhatsApp com a sua mensagem pronta. Nenhum dado fica guardado neste site.
+
+=====================================================
+10. DÚVIDAS
+Pergunta: Quais regiões vocês atendem?
+Resposta: Lavras e toda a região do Sul de Minas.
+Pergunta: Que tipo de obra vocês atendem?
+Resposta: Obras comerciais, industriais e loteamentos.
+Pergunta: Como peço um orçamento?
+Resposta: Pelo formulário desta página ou direto no WhatsApp. Informe o serviço, o local e o prazo.
+Pergunta: Quanto custa e qual o prazo?
+Resposta: Depende do serviço, da área e das condições do local. [VALORES E PRAZOS A CONFIRMAR]
+Pergunta: O que eu recebo no final do serviço?
+Resposta: [ENTREGAS A CONFIRMAR]
+
+=====================================================
+11. CONTATO
+Seção: Contato
+Título: Fale com a TerraCad.
+Endereço: R. Chagas Dória, 355 · Centro · Lavras/MG · CEP 37200-040
+Telefone/WhatsApp: (35) 99920-7670
+Horário: [HORÁRIO A CONFIRMAR]
+Instagram: @terracad_topografia
+Botão: Chamar no WhatsApp
+
+=====================================================
+12. CHAMADA FINAL
+Título: Sua obra no prumo, do primeiro piquete à entrega.
+Texto: Peça o orçamento e fale direto com a equipe da TerraCad.
+Botão: Solicitar orçamento
+
+=====================================================
+RODAPÉ
+TerraCad - Topografia & Geoprocessamento. Lavras e região.
+Contato: WhatsApp (35) 99920-7670 · Instagram @terracad_topografia
+Endereço: R. Chagas Dória, 355 · Centro · Lavras/MG
+Site produzido por Connect Alpha
+
+=====================================================
+PENDÊNCIAS [A CONFIRMAR]
+- Autorização para usar as fotos (marca do Shopping Cidade da Serra, rostos de funcionários, marcas dos equipamentos) e para citar a obra.
+- Registro profissional (CREA), anos de atuação, nome do responsável técnico.
+- Lista exata de serviços (aplicações de drone, tipos de georreferenciamento).
+- O que é entregue ao cliente (plantas, memoriais, ART etc.), prazos e valores.
+- Horário de atendimento (Maps só mostra "fecha 18:00").
+- Logo em alta resolução (o arquivo tem 150 px).
+- Domínio terracad.com.br: não há site no ar (sem registro A no DNS), o e-mail está no GoDaddy. Confirmar quem administra o domínio.
+- Avaliações do Google sem nome de quem escreveu, usadas como "Cliente". A 1ª tem erro de digitação do próprio cliente ("tô serviço"), mantida como está.
